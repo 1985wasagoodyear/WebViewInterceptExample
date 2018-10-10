@@ -25,17 +25,31 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCK-bC-ITu">
+                                <rect key="frame" x="275" y="567" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FCK-bC-ITu" secondAttribute="height" multiplier="1:1" id="i5Z-2O-qQD"/>
+                                    <constraint firstAttribute="height" constant="60" id="qq6-WP-hLK"/>
+                                </constraints>
+                                <state key="normal" image="smrtDog.jpeg"/>
+                                <connections>
+                                    <action selector="dogButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gs7-Kl-hrc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D9J-di-vxv" secondAttribute="trailing" id="6L0-ZN-CKo"/>
                             <constraint firstItem="D9J-di-vxv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mj6-0x-e2U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D9J-di-vxv" secondAttribute="bottom" id="cbg-Su-c1T"/>
+                            <constraint firstItem="FCK-bC-ITu" firstAttribute="trailing" secondItem="D9J-di-vxv" secondAttribute="trailing" constant="-40" id="dPh-nk-rSN"/>
+                            <constraint firstItem="FCK-bC-ITu" firstAttribute="bottom" secondItem="D9J-di-vxv" secondAttribute="bottom" constant="-40" id="fjs-ck-YIG"/>
                             <constraint firstItem="D9J-di-vxv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gmm-KR-B4h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dogButton" destination="FCK-bC-ITu" id="75h-wD-uqt"/>
                         <outlet property="webView" destination="D9J-di-vxv" id="NvM-y0-TWT"/>
                         <segue destination="8Q8-aS-xzM" kind="show" identifier="toHalt" id="wbp-sh-oDy"/>
                     </connections>
@@ -105,5 +119,6 @@
     </scenes>
     <resources>
         <image name="noFaceblock.jpg" width="400" height="400"/>
+        <image name="smrtDog.jpeg" width="300" height="300"/>
     </resources>
 </document>

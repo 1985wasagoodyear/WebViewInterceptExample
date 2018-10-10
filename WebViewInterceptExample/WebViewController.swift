@@ -14,6 +14,7 @@ class WebViewController: UIViewController {
     let HALT_SEGUE_IDENTIFIER = "toHalt"
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var dogButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,14 @@ class WebViewController: UIViewController {
         
         let request = URLRequest(url: URL(string: "https://www.google.com")!)
         self.webView.load(request)
+        
+        // prepare dog
+        self.dogButton.layer.masksToBounds = true
+        self.dogButton.layer.cornerRadius = 30.0
+    }
+    
+    @IBAction func dogButtonAction(_ sender: Any) {
+        self.replaceAllImagesWithDog()
     }
 }
 
@@ -33,11 +42,12 @@ extension WebViewController {
         let script = """
 var images = document.getElementsByTagName('img');
         for (var i = 0; i < images.length; i++) {
-            images[i].src = "/" + images[i].src;
+            images[i].src = "https://raw.githubusercontent.com/1985wasagoodyear/WebViewInterceptExample/master/WebViewInterceptExample/smrtDog.jpeg";
         }
 """
         self.webView.evaluateJavaScript(script) { (item, error) in
-            print(item)
+            //print(item ?? "")
+            //print(error?.localizedDescription ?? "")
         }
         
     }
