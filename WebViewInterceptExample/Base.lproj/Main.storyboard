@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WebViewController" customModule="WebViewInterceptExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-di-vxv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D9J-di-vxv" secondAttribute="trailing" id="6L0-ZN-CKo"/>
+                            <constraint firstItem="D9J-di-vxv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mj6-0x-e2U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D9J-di-vxv" secondAttribute="bottom" id="cbg-Su-c1T"/>
+                            <constraint firstItem="D9J-di-vxv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gmm-KR-B4h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="D9J-di-vxv" id="NvM-y0-TWT"/>
+                        <segue destination="8Q8-aS-xzM" kind="show" identifier="toHalt" id="wbp-sh-oDy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="145" y="117"/>
+        </scene>
+        <!--Halt View Controller-->
+        <scene sceneID="5mb-ce-4cK">
+            <objects>
+                <viewController id="8Q8-aS-xzM" customClass="HaltViewController" customModule="WebViewInterceptExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bx2-iZ-2GQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noFaceblock.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dSf-h8-OhY">
+                                <rect key="frame" x="40" y="100" width="295" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dSf-h8-OhY" secondAttribute="height" multiplier="1:1" id="g5G-kU-ZPP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eV8-qa-7HE">
+                                <rect key="frame" x="40" y="415" width="295" height="118"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="HALT">
+                                        <attributes>
+                                            <font key="NSFont" size="64" name="AmericanTypewriter-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" No FaceBook Allowed!">
+                                        <attributes>
+                                            <font key="NSFont" size="19" name="AmericanTypewriter-Semibold"/>
+                                            <font key="NSOriginalFont" size="19" name="AmericanTypewriter-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dSf-h8-OhY" firstAttribute="leading" secondItem="vJX-bL-btY" secondAttribute="leading" constant="40" id="4rO-hi-gFd"/>
+                            <constraint firstItem="vJX-bL-btY" firstAttribute="trailing" secondItem="dSf-h8-OhY" secondAttribute="trailing" constant="40" id="IId-YF-sS1"/>
+                            <constraint firstItem="eV8-qa-7HE" firstAttribute="trailing" secondItem="dSf-h8-OhY" secondAttribute="trailing" id="QJO-ub-dFy"/>
+                            <constraint firstItem="dSf-h8-OhY" firstAttribute="top" secondItem="vJX-bL-btY" secondAttribute="top" constant="80" id="X1C-lA-Bng"/>
+                            <constraint firstItem="eV8-qa-7HE" firstAttribute="leading" secondItem="dSf-h8-OhY" secondAttribute="leading" id="XTb-vi-F1U"/>
+                            <constraint firstItem="vJX-bL-btY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eV8-qa-7HE" secondAttribute="bottom" constant="20" id="fDz-A8-c8H"/>
+                            <constraint firstItem="eV8-qa-7HE" firstAttribute="top" secondItem="dSf-h8-OhY" secondAttribute="bottom" constant="20" id="ixe-Sg-XIe"/>
+                            <constraint firstItem="dSf-h8-OhY" firstAttribute="centerX" secondItem="vJX-bL-btY" secondAttribute="centerX" id="kCq-OA-bs8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vJX-bL-btY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xq-bo-aDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noFaceblock.jpg" width="400" height="400"/>
+    </resources>
 </document>
