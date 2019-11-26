@@ -60,10 +60,10 @@
 		3FE0690B2166BB4A00F54E96 /* WebViewInterceptExample */ = {
 			isa = PBXGroup;
 			children = (
-				3FE0690C2166BB4A00F54E96 /* AppDelegate.swift */,
 				3FE0690E2166BB4A00F54E96 /* WebViewController.swift */,
 				3F419F17216E95010011EFF8 /* HaltViewController.swift */,
 				3FE069102166BB4A00F54E96 /* Main.storyboard */,
+				3FE0690C2166BB4A00F54E96 /* AppDelegate.swift */,
 				3FE069132166BB4C00F54E96 /* Assets.xcassets */,
 				3FE069152166BB4C00F54E96 /* LaunchScreen.storyboard */,
 				3FE069182166BB4C00F54E96 /* Info.plist */,
@@ -302,7 +302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kevinyu.WebViewInterceptExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -319,7 +319,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kevinyu.WebViewInterceptExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

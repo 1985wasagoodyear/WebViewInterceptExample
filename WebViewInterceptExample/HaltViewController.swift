@@ -10,8 +10,11 @@ import UIKit
 
 class HaltViewController: UIViewController {
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true, completion: nil)
+    // tapping anywhere returns user to previous VC.
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        dismiss(animated: true,
+                completion: nil)
     }
 
 }
