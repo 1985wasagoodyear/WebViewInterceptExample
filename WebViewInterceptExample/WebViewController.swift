@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 
 private let HALT_SEGUE_IDENTIFIER = "toHalt"
+private let BASE_URL = "https://www.google.com/"
 
 private let doggifyScript = """
 var images = document.getElementsByTagName('img');
@@ -44,7 +45,7 @@ final class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = titleView
-        let request = URLRequest(url: URL(string: "https://www.google.com")!)
+        let request = URLRequest(url: URL(string: BASE_URL)!)
         webView.load(request)
     }
     
@@ -91,6 +92,7 @@ extension WebViewController: WKNavigationDelegate {
             decisionHandler(.cancel)
         }
         else {
+            print("redirected to \(url.absoluteString)")
             decisionHandler(.allow)
         }
     }

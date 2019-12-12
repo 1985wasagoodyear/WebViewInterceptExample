@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0EB66423A2ED9500E9AAEE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0EB66323A2ED9500E9AAEE /* WebKit.framework */; };
 		3F419F18216E95010011EFF8 /* HaltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F419F17216E95010011EFF8 /* HaltViewController.swift */; };
 		3F419F1C216E965F0011EFF8 /* noFaceblock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F419F1B216E965F0011EFF8 /* noFaceblock.jpg */; };
 		3F419F1E216E9C890011EFF8 /* smrtDog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F419F1D216E9C890011EFF8 /* smrtDog.jpeg */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0EB66323A2ED9500E9AAEE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3F419F17216E95010011EFF8 /* HaltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltViewController.swift; sourceTree = "<group>"; };
 		3F419F1B216E965F0011EFF8 /* noFaceblock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noFaceblock.jpg; sourceTree = "<group>"; };
 		3F419F1D216E9C890011EFF8 /* smrtDog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smrtDog.jpeg; sourceTree = "<group>"; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0EB66423A2ED9500E9AAEE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0EB66223A2ED9500E9AAEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F0EB66323A2ED9500E9AAEE /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3FE069002166BB4A00F54E96 = {
 			isa = PBXGroup;
 			children = (
 				3FE0690B2166BB4A00F54E96 /* WebViewInterceptExample */,
 				3FE0690A2166BB4A00F54E96 /* Products */,
+				3F0EB66223A2ED9500E9AAEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

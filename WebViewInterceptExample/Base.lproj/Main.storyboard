@@ -61,7 +61,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dogButton" destination="FCK-bC-ITu" id="75h-wD-uqt"/>
-                        <outlet property="webView" destination="D9J-di-vxv" id="NvM-y0-TWT"/>
+                        <outlet property="webView" destination="D9J-di-vxv" id="MT1-GM-4F9"/>
                         <segue destination="8Q8-aS-xzM" kind="show" identifier="toHalt" id="wbp-sh-oDy"/>
                     </connections>
                 </viewController>
