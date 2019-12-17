@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HaltViewController: UIViewController {
+final class HaltViewController: UIViewController {
 
     // tapping anywhere returns user to previous VC.
     override func touchesBegan(_ touches: Set<UITouch>,

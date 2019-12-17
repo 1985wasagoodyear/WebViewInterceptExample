@@ -8,26 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		3F0EB66423A2ED9500E9AAEE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0EB66323A2ED9500E9AAEE /* WebKit.framework */; };
+		3F391FA123A930F1007B3757 /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F391FA023A930F1007B3757 /* Scripts.swift */; };
+		3F391FA723A932BB007B3757 /* smrtDog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F391FA523A932BB007B3757 /* smrtDog.jpeg */; };
+		3F391FA823A932BB007B3757 /* noFaceblock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F391FA623A932BB007B3757 /* noFaceblock.jpg */; };
 		3F419F18216E95010011EFF8 /* HaltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F419F17216E95010011EFF8 /* HaltViewController.swift */; };
-		3F419F1C216E965F0011EFF8 /* noFaceblock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F419F1B216E965F0011EFF8 /* noFaceblock.jpg */; };
-		3F419F1E216E9C890011EFF8 /* smrtDog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F419F1D216E9C890011EFF8 /* smrtDog.jpeg */; };
 		3FE0690D2166BB4A00F54E96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE0690C2166BB4A00F54E96 /* AppDelegate.swift */; };
 		3FE0690F2166BB4A00F54E96 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE0690E2166BB4A00F54E96 /* WebViewController.swift */; };
 		3FE069122166BB4A00F54E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE069102166BB4A00F54E96 /* Main.storyboard */; };
-		3FE069142166BB4C00F54E96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE069132166BB4C00F54E96 /* Assets.xcassets */; };
 		3FE069172166BB4C00F54E96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE069152166BB4C00F54E96 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F0EB66323A2ED9500E9AAEE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		3F391FA023A930F1007B3757 /* Scripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
+		3F391FA223A93227007B3757 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F391FA523A932BB007B3757 /* smrtDog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smrtDog.jpeg; sourceTree = "<group>"; };
+		3F391FA623A932BB007B3757 /* noFaceblock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noFaceblock.jpg; sourceTree = "<group>"; };
 		3F419F17216E95010011EFF8 /* HaltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltViewController.swift; sourceTree = "<group>"; };
-		3F419F1B216E965F0011EFF8 /* noFaceblock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noFaceblock.jpg; sourceTree = "<group>"; };
-		3F419F1D216E9C890011EFF8 /* smrtDog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smrtDog.jpeg; sourceTree = "<group>"; };
 		3FE069092166BB4A00F54E96 /* WebViewInterceptExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewInterceptExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE0690C2166BB4A00F54E96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FE0690E2166BB4A00F54E96 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3FE069112166BB4A00F54E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3FE069132166BB4C00F54E96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FE069162166BB4C00F54E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FE069182166BB4C00F54E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,9 +53,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3F391FA323A93266007B3757 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				3F391FA023A930F1007B3757 /* Scripts.swift */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		3F391FA423A9327E007B3757 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FE0690E2166BB4A00F54E96 /* WebViewController.swift */,
+				3F419F17216E95010011EFF8 /* HaltViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3FE069002166BB4A00F54E96 = {
 			isa = PBXGroup;
 			children = (
+				3F391FA223A93227007B3757 /* README.md */,
 				3FE0690B2166BB4A00F54E96 /* WebViewInterceptExample */,
 				3FE0690A2166BB4A00F54E96 /* Products */,
 				3F0EB66223A2ED9500E9AAEE /* Frameworks */,
@@ -72,15 +91,14 @@
 		3FE0690B2166BB4A00F54E96 /* WebViewInterceptExample */ = {
 			isa = PBXGroup;
 			children = (
-				3FE0690E2166BB4A00F54E96 /* WebViewController.swift */,
-				3F419F17216E95010011EFF8 /* HaltViewController.swift */,
+				3F391FA323A93266007B3757 /* Scripts */,
+				3F391FA423A9327E007B3757 /* ViewControllers */,
+				3F391FA623A932BB007B3757 /* noFaceblock.jpg */,
+				3F391FA523A932BB007B3757 /* smrtDog.jpeg */,
 				3FE069102166BB4A00F54E96 /* Main.storyboard */,
 				3FE0690C2166BB4A00F54E96 /* AppDelegate.swift */,
-				3FE069132166BB4C00F54E96 /* Assets.xcassets */,
 				3FE069152166BB4C00F54E96 /* LaunchScreen.storyboard */,
 				3FE069182166BB4C00F54E96 /* Info.plist */,
-				3F419F1B216E965F0011EFF8 /* noFaceblock.jpg */,
-				3F419F1D216E9C890011EFF8 /* smrtDog.jpeg */,
 			);
 			path = WebViewInterceptExample;
 			sourceTree = "<group>";
@@ -143,11 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F391FA723A932BB007B3757 /* smrtDog.jpeg in Resources */,
+				3F391FA823A932BB007B3757 /* noFaceblock.jpg in Resources */,
 				3FE069172166BB4C00F54E96 /* LaunchScreen.storyboard in Resources */,
-				3F419F1C216E965F0011EFF8 /* noFaceblock.jpg in Resources */,
-				3FE069142166BB4C00F54E96 /* Assets.xcassets in Resources */,
 				3FE069122166BB4A00F54E96 /* Main.storyboard in Resources */,
-				3F419F1E216E9C890011EFF8 /* smrtDog.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F391FA123A930F1007B3757 /* Scripts.swift in Sources */,
 				3FE0690F2166BB4A00F54E96 /* WebViewController.swift in Sources */,
 				3FE0690D2166BB4A00F54E96 /* AppDelegate.swift in Sources */,
 				3F419F18216E95010011EFF8 /* HaltViewController.swift in Sources */,

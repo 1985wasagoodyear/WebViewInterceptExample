@@ -9,18 +9,15 @@
 import UIKit
 import WebKit
 
-private let HALT_SEGUE_IDENTIFIER = "toHalt"
-private let BASE_URL = "https://www.google.com/"
+// MARK: - Constants for WebViewController
 
-private let doggifyScript = """
-var images = document.getElementsByTagName('img');
-for (var i = 0; i < images.length; i++) {
-images[i].src = "https://raw.githubusercontent.com/1985wasagoodyear/WebViewInterceptExample/master/WebViewInterceptExample/smrtDog.jpeg";
-}
-"""
+private let HALT_SEGUE_IDENTIFIER = "toHalt"
+private let BASE_URL_STRING = "https://www.google.com"
+private let BASE_URL = URL(string: BASE_URL_STRING)!
 
 final class WebViewController: UIViewController {
 
+    // MARK: - IB Outlets & UI Elements
     
     @IBOutlet var webView: WKWebView! {
         didSet {
@@ -28,6 +25,7 @@ final class WebViewController: UIViewController {
             webView.uiDelegate = self
         }
     }
+    
     @IBOutlet var dogButton: UIButton! {
         didSet {
             dogButton.layer.masksToBounds = true
@@ -42,25 +40,27 @@ final class WebViewController: UIViewController {
         return label;
     }()
     
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = titleView
-        let request = URLRequest(url: URL(string: BASE_URL)!)
+        let request = URLRequest(url: BASE_URL)
         webView.load(request)
     }
     
-    @IBAction func dogButtonAction(_ sender: Any) {
-        replaceAllImagesWithDog()
-    }
+    // MARK: - Custom Action Methods
     
-    func replaceAllImagesWithDog() {
-        self.webView.evaluateJavaScript(doggifyScript)
+    @IBAction func dogButtonAction(_ sender: Any) {
+        // replace all images with dog
+        self.webView.evaluateJavaScript(Scripts.doggify)
         { (item, error) in
             if let err = error {
                 print("Failed to perform doggification with error: \(err)")
             }
         }
     }
+    
     @IBAction func forwardButton(_ sender: Any) {
         if webView.canGoForward {
             webView.goForward()
@@ -72,10 +72,17 @@ final class WebViewController: UIViewController {
             webView.goBack()
         }
     }
+    
+    // do something if we ever find Facebook
+    func handleFacebook() {
+        // print("Now displaying Facebook halt page")
+        performSegue(withIdentifier: HALT_SEGUE_IDENTIFIER, sender: self)
+    }
 }
 
 extension WebViewController: WKNavigationDelegate {
     
+    // handle redirects and loads of new pages
     func webView(_ webView: WKWebView,
                  decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -97,13 +104,23 @@ extension WebViewController: WKNavigationDelegate {
         }
     }
     
+    // called when loading is completed.
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         titleView.text = webView.title
     }
     
-    func handleFacebook() {
-        performSegue(withIdentifier: HALT_SEGUE_IDENTIFIER, sender: self)
-    }
 }
 
-extension WebViewController: WKUIDelegate { }
+extension WebViewController: WKUIDelegate {
+    // handle window.open() for additional taps by loading that request on the
+    // current page, instead.
+    func webView(_ webView: WKWebView,
+                 createWebViewWith configuration: WKWebViewConfiguration,
+                 for navigationAction: WKNavigationAction,
+                 windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if (navigationAction.targetFrame?.isMainFrame ?? true) {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+}
